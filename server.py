@@ -16,6 +16,7 @@ import glob
 import logging
 import urllib.request
 import urllib.error
+import urllib.parse
 import json
 
 logging.basicConfig(level=logging.INFO)
@@ -154,7 +155,6 @@ def get_douyin_video_v2(video_id):
             html, re.DOTALL
         )
         if match:
-            import urllib.parse
             raw = urllib.parse.unquote(match.group(1))
             data = json.loads(raw)
 
