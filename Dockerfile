@@ -11,6 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY server.py .
+COPY cookies.txt .
 
 # Railway 会自动设置 PORT 环境变量
 ENV PORT=8080
